@@ -1,0 +1,29 @@
+<section id="recommended-section">
+    <div class="container-layout wrap">
+        <div class="books-layout" *ngIf="books">
+            <ul id="list">
+                <li class="book" *ngFor="let bookGroup of books">
+                    <a [routerLink]="['/book/details', bookGroup.book.id]">
+                        <app-book-cover [bookFullInfo]="bookGroup"></app-book-cover>
+                    </a>
+                    <div class="buttoms-layout">
+                        <a [routerLink]="['/book/details', bookGroup.book.id]" class="buttom" id="more-details" >
+                            <p>
+                            <span class="material-symbols-outlined">info</span>
+                            More details
+                            </p>
+                        </a>
+            
+                        <button (click)="removeFavoriteBook(bookGroup)" *ngIf="bookGroup.isFavorite" class="buttom" id="favorites" >
+                            <span class="material-symbols-outlined icon-favorite-activated">favorite</span>
+                        </button>
+              
+                        <button (click)="addFavoriteBook(bookGroup)" *ngIf="!bookGroup.isFavorite" class="buttom" id="favorites" >
+                            <span class="material-symbols-outlined icon-favorite-desactivated">favorite</span >
+                        </button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>

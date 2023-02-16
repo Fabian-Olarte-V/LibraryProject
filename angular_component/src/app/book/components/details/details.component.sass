@@ -1,0 +1,152 @@
+@import '../../../../styles'
+
+#book-view
+    .container-layout
+        display: flex
+        flex-flow: row nowrap
+        border: 1px solid $details-primary-color
+        position: relative
+        height: auto
+        min-height: 600px
+        margin-top: 30px
+        margin-bottom: 40px
+        border-radius: 20px
+
+        .icon-favorite-activate
+            color: $red !important
+            &:hover
+                color: $font-color-primary !important
+            
+        .icon-favorite-desactivated
+            color: $font-color-primary !important
+            &:hover
+                color: $red !important
+
+        #button-favorites
+            top: 2%
+            right: 4%
+            padding: 10px
+            height: 40px
+
+            &:hover .icon
+                color: #cf5252
+                
+            p
+                @include flex-center
+                column-gap: 5px
+                font-size: 1.4em
+
+                span
+                    font-size: 1.5em
+        
+        .float-button
+            position: absolute
+            right: 2%
+            top: 3%
+            background-color: transparent
+            color: white
+            transition: all 100ms
+            border: none
+            
+            span
+                font-size: 3em
+
+            &:hover
+                cursor: pointer
+                transform: scale(1.05)
+
+        #image-layout
+            flex-basis: 35%
+            flex-grow: 1
+            @include flex-center
+        
+            #image-book
+                width: 350px
+                border-radius: 20px
+
+        #book-info
+            flex-basis: 65%
+            flex-grow: 1
+            display: flex
+            flex-flow: column nowrap
+            justify-content: center
+            margin: 50px 40px    
+
+            .title-secundary
+                color: $font-color-third
+                font-size: 1.5em
+                padding-bottom: 3px
+                font-weight: 300
+            
+            #main-info
+                position: relative
+                padding-bottom: 30px
+
+                &::after
+                    content: ''
+                    position: absolute
+                    height: 1px
+                    width: 100%
+                    background-color: #414141
+                    bottom: 0%
+                    left: 0%
+
+                #optional-info-layout
+                    @include flex-center
+                    justify-content: flex-start
+                    color: $font-color-secundary
+                    column-gap: 80px
+                    width: 70%
+
+                    .optional-info
+                        @include flex-center     
+                        font-size: 1.8em
+                        font-weight: 300     
+
+                        .icon
+                            font-size: 1.1em
+                            padding-right: 5px           
+
+
+                #title-layout
+                    #title
+                        font-size: 6.5em
+                        color: $font-color-primary
+                        padding-bottom: 20px
+                        font-weight: 700
+
+                #description-layout         
+                    #description
+                        font-size: 2em
+                        color: $font-color-primary
+                        padding-bottom: 30px
+                        font-weight: 400
+
+                #copies-layout
+                    display: flex
+                    justify-content: flex-end
+                    align-items: center
+                    color: $font-color-primary
+                    margin-bottom: 15px
+
+                    p
+                        font-size: 2em
+
+                    span
+                        margin-left: 5px
+                        font-size: 3.5em
+
+            #secundary-info
+                @include flex-center
+                justify-content: flex-start
+                flex-flow: row wrap
+                margin-top: 20px
+                column-gap: 50px
+
+                .box-info
+                    width: auto
+                    padding: 0px 10px
+           
+                .info-secundary
+                    color: $font-color-primary
+                    font-size: 1.8em

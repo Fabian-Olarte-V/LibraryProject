@@ -1,0 +1,91 @@
+@import '../../../../styles'
+
+#recommended-section
+    .container-layout
+        display: flex
+        flex-flow: row nowrap
+
+        .filters
+            flex-basis: 20%
+            min-width: 250px
+            background-color: $background-color-secundary
+            flex-grow: 1
+            
+        .books-layout
+            flex-basis: 80%
+            flex-grow: 1
+            margin-left: 30px 
+
+            #list
+                display: flex
+                flex-flow: row wrap
+                justify-content: space-around
+        
+                .book
+                    flex-basis: 21%
+                    min-width: 150px
+                    padding: 15px
+                    margin: 10px 5px
+                    position: relative
+                    background-color: $background-color-secundary
+                    border-radius: 10px
+            
+                    a
+                        text-decoration: none
+
+                    .buttoms-layout
+                        @include flex-center
+                        flex-flow: row nowrap
+                        width: 100%
+                        padding-top: 10px
+
+                        .buttom
+                            height: 45px
+                            background-color: #212121
+                            border-radius: 5px
+                            margin: 0px 2.5px
+                            text-decoration: none
+                            @include flex-center
+                            
+                            p
+                                @include flex-center
+                                column-gap: 10px
+                                font-size: 1.5em
+                                color: $font-color-secundary
+
+                            span   
+                                color: $font-color-secundary
+
+                            &:hover
+                                cursor: pointer
+                            
+                                color: $font-color-primary
+
+                        #more-details
+                            margin-left: 0px
+                            flex-basis: 70%
+                            flex-grow: 1
+                            background-color: $primary-color
+
+                            &:hover span, &:hover p              
+                                color: $font-color-primary
+
+                        .icon-favorite-activated
+                            color: $red !important
+                            &:hover
+                                color: $font-color-secundary !important
+                            
+                        .icon-favorite-desactivated
+                            color: $font-color-secundary !important
+                            &:hover
+                                color: $red !important
+                    
+                        #favorites     
+                            margin-right: 0px
+                            flex-basis: 15%
+                            flex-grow: 1
+                            border: 1px solid $details-primary-color
+                            background-color: $background-color-secundary
+                            
+                            span
+                                padding: 10px

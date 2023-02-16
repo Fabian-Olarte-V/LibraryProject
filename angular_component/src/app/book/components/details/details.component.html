@@ -1,0 +1,73 @@
+<section id="book-view">
+    <ng-container *ngIf="bookInfo">
+        <div class="container-layout wrap">
+
+            <!-- Poner con rol desbloquear
+            <button class="float-button" id="button-options">
+                <span class="material-symbols-outlined">more_vert</span>
+            </button>
+        -->
+
+            <button *ngIf="bookInfo.isFavorite" (click)="removeFavoriteBook(bookInfo)" class="float-button" id="button-favorites"> <!--Put onclick methods-->
+                <p><span class="material-symbols-outlined icon icon-favorite-activate">heart_plus</span> Remove to favorites</p>
+            </button>
+
+            <button *ngIf="!bookInfo.isFavorite" (click)="addFavoriteBook(bookInfo)" class="float-button" id="button-favorites"> <!--Put onclick methods-->
+                <p><span class="material-symbols-outlined icon icon-favorite-desactive">heart_plus</span> Add to favorites</p>
+            </button> <!--Cambiar icono de remover de favoritos-->
+
+            <div id="image-layout">
+                <img id="image-book" src="https://marketplace.canva.com/EAEwm4PGN3M/1/0/1024w/canva-azul-hombre-parado-al-borde-portada-de-libro-de-ficci%C3%B3n-i8eOsLRD_fU.jpg" alt="Image Book">
+            </div>
+
+            <div id="book-info">
+                <div id="main-info">
+                    <div id="optional-info-layout">
+                        <p class="optional-info"><span class="material-symbols-outlined icon">category</span>{{bookInfo.book.category}}</p>
+                        <p class="optional-info"><span class="material-symbols-outlined icon">grade</span>{{bookInfo.book.score}} / 5</p>
+                        <p class="optional-info">ISBN: {{bookInfo.book.isbn}}</p>
+                    </div>
+
+                    <div id="title-layout">
+                        <h1 id="title">{{bookInfo.book.name}}</h1>
+                    </div>
+
+                    <div id="description-layout">
+                        <p class="title-secundary">Description</p>
+                        <p id="description">{{bookInfo.book.description}}</p>
+                    </div>
+
+                    <div id="copies-layout">
+                        <p>Available Copies</p>
+                        <span class="material-symbols-outlined">expand_more</span>
+                    </div>
+
+                    <div id="copies-options">
+                        <app-options></app-options>
+                    </div>
+                </div>
+
+                <div id="secundary-info">
+                    <div class="box-info">
+                        <p class="title-secundary">Pages</p>
+                        <p class="info-secundary">{{bookInfo.book.numPages}}</p>
+                    </div>
+                    <div class="box-info">
+                        <p class="title-secundary">Editorial</p>
+                        <p class="info-secundary">{{bookInfo.book.editorial}}</p>
+                    </div>
+                    <div class="box-info">
+                        <p class="title-secundary">Language</p>
+                        <p class="info-secundary">{{bookInfo.book.language}}</p>
+                    </div>
+                    <div class="box-info">
+                        <p class="title-secundary">Authors</p>
+                        <ng-container *ngFor="let author of bookInfo.authors">   
+                            <p class="info-secundary">{{author.name}}</p>
+                        </ng-container>              
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </ng-container>
+</section>

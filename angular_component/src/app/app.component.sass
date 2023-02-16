@@ -1,0 +1,89 @@
+@import '../styles'
+
+#header 
+    background-color: $background-color-primary
+    height: 70px
+    padding: 10px 0px
+    
+    .container
+        display: flex
+        column-gap: 15px
+        height: 100%
+
+        #icon-logo
+            @include flex-center
+            justify-content: space-between
+            height: 100%
+            min-width: 100px
+            flex-basis: 10%
+
+            img
+                width: 55px
+                filter: invert(100%)
+                
+        #menu-home
+            justify-self: start
+            flex-flow: row nowrap
+            flex-basis: 40%
+            
+            ul
+                @include flex-center 
+                justify-content: flex-start             
+                list-style: none
+                height: 100%
+                column-gap: 10px
+             
+                li        
+                    .item-menu
+                        color: $font-color-secundary
+                        font-size: 1.9em
+                        padding: 15px 20px
+                        text-decoration: none
+                        position: relative
+                        margin: 0px 10px
+                        transition: color 300ms
+                        font-weight: 300
+                        
+                        &::after
+                            content: ''
+                            width: 0%
+                            height: 2px
+                            background-color: $primary-color
+                            position: absolute
+                            bottom: 0
+                            left: 0
+                            transition: width 300ms
+
+                        &:hover::after
+                            width: 100%
+
+                        &:hover
+                            color: $font-color-primary
+
+        #find-layout
+            flex-basis: 35%
+
+        #user-preferences
+            @include flex-center
+            justify-content: space-between
+            padding: 5px 15px
+            flex-basis: 15%
+
+            .button
+                background-color: transparent
+                border: none
+
+                &:hover
+                    cursor: pointer
+
+                .icon
+                    color: $font-color-primary
+                    font-size: 30px
+    
+
+        
+
+
+
+
+

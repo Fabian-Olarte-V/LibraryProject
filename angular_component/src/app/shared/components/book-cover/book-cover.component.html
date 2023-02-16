@@ -1,0 +1,18 @@
+<div class="book-cover-layout" *ngIf="bookFullInfo">
+    <div class="book-img-layout">
+        <img id="image-book" src="https://marketplace.canva.com/EAEwm4PGN3M/1/0/1024w/canva-azul-hombre-parado-al-borde-portada-de-libro-de-ficci%C3%B3n-i8eOsLRD_fU.jpg" alt="Image Book">
+    </div>
+
+    <div class="book-info">
+        <a  id="title">{{bookFullInfo.book.name}}</a>
+        <p *ngIf="bookFullInfo.authors.length == 1" class="sec" id="authors">Author: <span class="sec-info" *ngFor="let author of bookFullInfo.authors">{{author.name}}.</span></p>
+        <p *ngIf="bookFullInfo.authors.length > 1" class="sec" id="authors">Authors: 
+            <span class="sec-info" *ngFor="let author of bookFullInfo.authors"> {{author.name}}<span *ngIf="bookFullInfo.authors[bookFullInfo.authors.length - 1] === author">.</span>
+                <span *ngIf="bookFullInfo.authors[bookFullInfo.authors.length - 1] !== author">,</span>
+            </span>
+        </p>
+        <p *ngIf="bookFullInfo.copies.length == 1" class="sec" id="price"><span class="sec-info">${{bookFullInfo.minCopyPrice?.price}}</span></p>
+        <p *ngIf="bookFullInfo.copies.length > 1" class="sec" id="price"><span class="sec-info">${{bookFullInfo.minCopyPrice?.price}}</span> - <span class="sec-info">${{bookFullInfo.maxCopyPrice?.price}}</span></p>    
+    </div>
+</div>
+

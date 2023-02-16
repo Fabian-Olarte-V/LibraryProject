@@ -1,0 +1,38 @@
+<div id="copies-layout">
+    <ng-container *ngIf="copies">
+        <ul id="copies" *ngFor="let copy of copies">
+            <li id="copy-layout">
+                <div class="copy">
+                    <div id="info-copy">
+                        <div class="info-box" id="icon-layout">
+                            <span id="icon" class="material-symbols-outlined">import_contacts</span>
+                        </div>
+                        <div class="info-box" id="serial-layout">
+                            <p class="title-secundary">Serial</p>
+                            <p class="info-secundary">{{copy.serial}}</p>
+                        </div>
+                        <div class="info-box" id="status-layout">
+                            <p class="title-secundary">Status</p>
+                            <p class="info-secundary">{{copy.status}}</p>
+                        </div>
+                        <div class="info-box" id="price-layout">
+                            <p class="title-secundary">Price</p>
+                            <p class="info-secundary">{{copy.price}}</p>
+                        </div>
+                    </div>
+
+                    <div id="process-copy">
+                        <div id="buy-button-layout">
+                            <button class="button" id="buy-button">Buy Now</button>
+                        </div>
+                        <div id="cart-button-layout">
+                            <button (click)="addToShoppingCart(copy)" class="button" id="cart-button">
+                                <p><span class="material-symbols-outlined">shopping_cart</span> Add to Cart</p>
+                            </button>
+                        </div>         
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </ng-container>
+</div>

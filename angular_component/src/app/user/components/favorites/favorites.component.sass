@@ -1,0 +1,121 @@
+@import '../../../../styles'
+    
+#favorite-section
+
+    .container-layout
+        width: 100%
+
+        #title
+            text-align: center
+            color: $font-color-secundary
+            font-size: 3em
+            margin: 10px 0px 30px 0px
+            font-weight: 500
+
+        #book-view-layout
+            width: 100%
+
+            #books
+                width: 100%
+                display: flex
+                flex-flow: row wrap
+                justify-content: space-around
+                column-gap: 20px
+                list-style: none
+                
+                .book
+                    margin-bottom: 20px
+                    flex-basis: 45%
+                    flex-grow: 1
+                    display: flex
+                    flex-flow: row nowrap
+                    border-radius: 20px
+                    background-color: $background-color-secundary
+                    overflow: hidden
+                    max-width: 750px
+                    min-width: 500px
+
+                    #image-layout
+                        flex-basis: 20%
+                        padding: 10px
+                        text-align: center
+
+                        .book-image
+                            width: 180px
+                            height: 100%
+                            border-radius: 20px
+
+                    #info-layout
+                        flex-basis: 50%
+                        display: flex
+                        flex-flow: column nowrap
+                        margin: 10px 
+                        max-width: 350px
+
+                        .info-title
+                            font-size: 1.5em
+                            font-weight: 300
+                            color: $font-color-third
+                            padding: 12px 0px 3px 0px
+
+                        .info
+                            font-size: 1.8em
+                            font-weight: 300
+                            color: $font-color-secundary    
+
+                            span
+                                font-size: 1em
+
+                        #name-layout
+                            .name
+                                font-size: 3.2em
+                                font-weight: 400
+                                color: $font-color-primary
+
+                        #authors-layout
+                            .authors
+                                padding-top: 5px
+                                list-style-type: none
+                                display: inline-block
+                                width: 100%
+
+                                #author-info
+                                    display: inline-block
+                                    width: 100%
+                              
+
+                    #button-layout
+                        flex-basis: 30%
+                        display: flex
+                        flex-flow: column nowrap
+                        justify-content: space-between
+                        margin: 15px 20px 20px 10px
+
+                        .remove-button
+                            align-self: flex-end
+                            width: 30%
+                            height: 30px
+                            border: none
+                            background-color: $background-color-secundary
+
+                            &:hover
+                                cursor: pointer
+
+                            span
+                                color: $font-color-secundary
+                            
+                        .shop-button
+                            background-color: $primary-color
+                            color: $font-color-primary
+                            height: 50px
+                            border-radius: 10px
+                            border: none
+                            font-size: 1.5em
+                            font-weight: 300
+                        
+                            &:hover
+                                cursor: pointer
+                        
+                    
+                            
+                            

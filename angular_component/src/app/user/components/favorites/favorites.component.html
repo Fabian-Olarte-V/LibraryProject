@@ -1,0 +1,73 @@
+<section id="favorite-section">
+    
+    <div class="container-layout wrap" *ngIf="favoriteBooks">
+        
+        <h1 id="title">Favorite Books</h1>
+
+        <div id="book-view-layout">
+            <ul id="books">
+                <li class="book" *ngFor="let bookFull of favoriteBooks">
+
+                    <div id="image-layout">
+                        <img class="book-image" src="https://marketplace.canva.com/EAEwm4PGN3M/1/0/1024w/canva-azul-hombre-parado-al-borde-portada-de-libro-de-ficci%C3%B3n-i8eOsLRD_fU.jpg" alt="image-book"/>
+                    </div>
+
+                    <div id="info-layout">
+
+                        <div id="name-layout">
+                            <h1 class="name">{{ bookFull.book.name }}</h1>
+                        </div>
+
+                        <div id="authors-layout">
+                            <ul class="authors" *ngIf="bookFull.authors">
+                                <li class="author">
+                                  <div *ngIf="bookFull.authors.length == 1">
+                                    <p class="info-title">Author</p>
+                                    <p class="info">
+                                      <span *ngFor="let author of bookFull.authors">{{ author.name }}.</span>
+                                    </p>
+                                  </div>
+              
+                                  <div *ngIf="bookFull.authors.length > 1">
+                                    <p class="info-title">Authors</p>
+                                    <p id="author-info" class="info">
+                                      <span *ngFor="let author of bookFull.authors"> 
+                                          {{ author.name }}
+                                          <span *ngIf="bookFull.authors[bookFull.authors.length - 1] ===author">.</span>
+                                          <span *ngIf=" bookFull.authors[bookFull.authors.length - 1] !== author">,</span>
+                                      </span>
+                                    </p>
+                                  </div>
+                                </li>
+                              </ul>      
+                        </div>
+
+                        <div id="secundary-info">
+                            <p class="info-title">Category</p>
+                            <p class="info">{{ bookFull.book.category }}</p>
+                            <p class="info-title">Language</p>
+                            <p class="info">{{ bookFull.book.language }}</p>
+                            <p class="info-title">Rate</p>
+                            <p class="info">{{ bookFull.book.score }} / 5</p>
+                        </div>
+
+                    </div>
+
+                    <div id="button-layout">
+                        
+                        <button (click)="removeFavoriteBook(bookFull)" class="remove-button">
+                            <span class="material-symbols-outlined">close</span>
+                          </button>
+          
+                          <button (click)="goToShop(bookFull)" class="shop-button">Go to shop</button>
+                    </div>
+
+                </li>
+            </ul>
+
+        </div>
+
+
+    </div>
+</section>
+

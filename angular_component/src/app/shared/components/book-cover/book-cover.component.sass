@@ -1,0 +1,43 @@
+@import '../../../../styles'
+
+.book-cover-layout
+    .book-img-layout      
+        text-align: center
+        #image-book
+            width: 100%
+            border-radius: 10px
+            transition: all 300ms
+            
+            &:hover
+                transform: scale(1.02)
+
+    .book-info
+        margin-top: 15px
+
+        #title
+            font-size: 2.7em
+            font-weight: 400
+            text-decoration: none
+            color: $font-color-primary     
+            padding-bottom: 5px    
+
+        .sec
+            color: $font-color-secundary
+            font-size: 1.65em
+            font-weight: 300
+            padding: 2px 0px  
+            overflow: hidden   
+            text-overflow: ellipsis
+            white-space: nowrap
+
+            .sec-info
+                font-size: 1em
+
+        #price
+            font-size: 1.8em
+            color: $font-color-primary
+            font-weight: 400
+            padding-top: 10px
+        
+        
+        
